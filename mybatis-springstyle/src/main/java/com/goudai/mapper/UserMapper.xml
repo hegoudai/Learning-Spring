@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.goudai.mapper.UserMapper">
+    <!--自定义返回结果集-->
+    <resultMap id="userMap" type="UserBean">
+        <id property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="username" column="username" javaType="java.lang.String"/>
+        <result property="password" column="password" javaType="java.lang.String"/>
+    </resultMap>
+    <!--映射-->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into userinfo(username,password) values(#{username}, #{password})
+    </insert>
+
+    <update id="updateUser">
+        update userinfo set username=#{username}, password=#{password} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from userinfo where id=#{id}
+    </delete>
+
+    <select id="getUserById" parameterType="int" resultType="UserBean">
+        select * from userinfo where id=#{id}
+    </select>
+
+    <select id="getUserByUserName" parameterType="String" resultType="UserBean">
+        select * from userinfo where username=#{username}
+    </select>
+
+    <select id="selectAllUser" resultMap="userMap">
+        select * from userinfo
+    </select>
+</mapper>
