@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--顺序不能变-->
+<configuration>
+    <!--数据源配置-->
+    <properties resource="mysql.properties"></properties>
+    <!--别名-->
+    <typeAliases>
+        <!--自动扫描，别名为类名-->
+        <package name="com.goudai.example"/>
+    </typeAliases>
+    <!--mybatis运行环境-->
+    <environments default="cybatis">
+        <environment id="cybatis">
+            <transactionManager type="JDBC"/>
+
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="com/goudai/mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>
