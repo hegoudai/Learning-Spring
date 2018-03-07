@@ -1,7 +1,7 @@
 # Learning-Spring
 <a href=https://www.jianshu.com/p/86851aadb006>bean.xml学习笔记</a>
 <br>
-<a href=https://www.jianshu.com/p/43b7ed3dc6b3>xml配置bean</a>
+<a href=https://www.jianshu.com/p/43b7ed3dc6b3>xml定义bean</a>
 <br>
 <a href=https://www.jianshu.com/p/500e8d1c9591>mybatis入门项目笔记</a>
 <br>
